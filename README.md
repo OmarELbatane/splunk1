@@ -1,9 +1,14 @@
 # ItsBitsy
-Hello,
 
+<h2> Purpose of the challenge </h2>
 
+Investigate anomalies using Splunk.
+
+<h2> The challenge </h2>
 
 SOC Analyst Johny has observed some anomalous behaviours in the logs of a few windows machines. It looks like the adversary has access to some of these machines and successfully created some backdoor. His manager has asked him to pull those logs from suspected hosts and ingest them into Splunk for quick investigation. Our task as SOC Analyst is to examine the logs and identify the anomalies.
+
+
 
 
 <h2> Question 1 </h2>
@@ -47,7 +52,7 @@ Examine the logs and identify the user that the adversary was trying to imperson
 Here, all I had to do was go back and find the users, and so I found this information.
 
 ![Image Description](/sk10.png)
-![Image Description](/sk11.png)
+![Image Description](/sK11.png)
 
 <h2> Question 5 </h2>
 
@@ -57,20 +62,28 @@ What is the command used to add a backdoor user from a remote computer?
 
 Since Windows must run a process to add a new user, and each time a new process is created a log entry is added, there must be another log with a different Event ID containing the command that was executed. This Event ID is #1. By adding that value to our search, we are down to 25 logs: index="main" EventID="1"
 
+![Image Description](/sk12.png)
+
 <h2> Question 6 </h2>
 
 How many times was the login attempt from the backdoor user observed during the investigation?
 
 <h2> Answer </h2>
 
+
 To answer this, all I need to do is use this command to find out how many times:
 index="main" User="A1berto"
+![Image Description](/sk13.png)
+![Image Description](/sk14.png)
 
 <h2> Question 7 </h2>
 
 What is the name of the infected host on which suspicious PowerShell commands were executed?
 <h2> Answer </h2>
 This was easy to find since it's one of the hosts from the start.
+
+![Image Description](/sk15.png)
+![Image Description](/sk16.png)
 
 <h2> Question 8 </h2>
 
@@ -83,33 +96,49 @@ When I did my research, I found this:
 
 So, I used this command and found that information.
 
+![Image Description](/sk17.png)
+![Image Description](/sk18.png)
+
 <h2> Question 9 </h2>
 
 An encoded PowerShell script from the infected host initiated a web request. What is the full URL?
 
 <h2> Answer </h2>
 
-To be honest, this was hard and took me some time to do, but I managed. Just note that I did some research and got some help before doing this.
 
+To be honest, this was hard and took me some time to do, but I managed. Just note that I did some research and got some help before doing this.
 So, I started first of all by copying all the text and putting it into CyberChef.
+
+![Image Description](/sk19.png)
 
 Inside the encoded code, we find this:
 
 :Unicode.GetString([Convert]::FromBase64String('aAB0AHQAcAA6AC8ALwAxADAALgAxADAALgAxADAALgA1AA=='))), and we need to add /news.php at the end.
-
+![Image Description](/sk20.png)
+So now, I need to convert from base64 to string for aAB0AHQAcAA6AC8ALwAxADAALgAxADAALgAxADAALgA1AA==
+![Image Description](/sk21.png)
 So now, I need to convert from base64 to string for aAB0AHQAcAA6AC8ALwAxADAALgAxADAALgAxADAALgA1AA==
 
 And we get this URL: http://10.10.10.5/news.php
-
 After defanging the URL and adding it, we get this result.
 
+![Image Description](/sk22.png)
+
+
 Thank you for your attention.
+
+
+<h2> What i learned  </h2>
+
+
 I learned in this challenge that I'm still far away from mastering Splunk, but it was still fun to try.
+Here's the link to the challenge if you are interested : https://tryhackme.com/room/investigatingwithsplunk
 
 
 
+<h2> Author  </h2>
 
-
+Omar EL BATANE
 
 
 
