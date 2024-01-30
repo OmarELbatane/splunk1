@@ -13,8 +13,10 @@ How many events were collected and Ingested in the index main?
 <h2> Answer </h2>
 
 We started first by researching and reporting.
+![Image Description](/sp2.png)
 
 To answer this question, all I have to do is set the query index to "main," change the time to "all time," and switch to verbose mode for the lecture.
+![Image Description](/sp3.png)
 
 <h2> Question 2 </h2>
 On one of the infected hosts, the adversary was successful in creating a backdoor user. What is the new username?
@@ -92,7 +94,6 @@ I learned in this challenge that I'm still far away from mastering Splunk, but i
 
 
 
-![Image Description](/sp2.png)
 
 
 
