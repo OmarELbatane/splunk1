@@ -12,11 +12,12 @@ How many events were collected and Ingested in the index main?
 
 <h2> Answer </h2>
 
-We started first by researching and reporting.
-![Image Description](/sp2.png)
+
+
 
 To answer this question, all I have to do is set the query index to "main," change the time to "all time," and switch to verbose mode for the lecture.
-![Image Description](/sp3.png)
+![Image Description](/sk2.png)
+![Image Description](/SK3.png)
 
 <h2> Question 2 </h2>
 On one of the infected hosts, the adversary was successful in creating a backdoor user. What is the new username?
@@ -24,16 +25,29 @@ On one of the infected hosts, the adversary was successful in creating a backdoo
 <h2> Answer </h2>
 I started by verifying the latest event IDs of everyone and found out that the event ID contains this information.
 
+![Image Description](/sk4.png)
+![Image Description](/sk5.png)
+![Image Description](/sk6.png)
+
+
 <h2> Question 3 </h2>
 On the same host, a registry key was also updated regarding the new backdoor user. What is the full path of that registry key?
 <h2> Answer </h2>
 Since Sysinternals Sysmon is installed on the systems, we know from Sysmon that Event ID 12 is for registry object add/delete, Event ID 13 is for registry value set, and Event ID 14 is for registry key and value rename.
+
+![Image Description](/sk7.png)
+![Image Description](/sk8.png)
+![Image Description](/sk9.png)
+
 
 <h2> Question 4 </h2>
 Examine the logs and identify the user that the adversary was trying to impersonate.
 
 <h2> Answer </h2>
 Here, all I had to do was go back and find the users, and so I found this information.
+
+![Image Description](/sk10.png)
+![Image Description](/sk11.png)
 
 <h2> Question 5 </h2>
 
