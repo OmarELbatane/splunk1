@@ -1,8 +1,6 @@
-# ItsBitsy
+# Investigate anomalies using Splunk.
 
-<h2> Purpose of the challenge </h2>
 
-Investigate anomalies using Splunk.
 
 <h2> The challenge </h2>
 
